@@ -1,7 +1,7 @@
 package fuzs.visualworkbench.fabric;
 
 import fuzs.puzzleslib.common.api.core.v1.ModConstructor;
-import fuzs.visualworkbench.VisualWorkbench;
+import fuzs.visualworkbench.common.VisualWorkbench;
 import net.fabricmc.api.ModInitializer;
 
 public class VisualWorkbenchFabric implements ModInitializer {

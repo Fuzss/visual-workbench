@@ -1,3 +1,4 @@
+import fuzs.multiloader.extension.commonProject
 import fuzs.multiloader.extension.packageName
 
 plugins {
@@ -16,7 +17,7 @@ multiloader {
         json {
             entrypoint(
                 "jei_mod_plugin",
-                "${project.group}.${project.packageName}.integration.jei.VisualWorkbenchJEIPlugin"
+                "${project.group}.${project.commonProject.packageName}.integration.jei.VisualWorkbenchJEIPlugin"
             )
         }
     }
