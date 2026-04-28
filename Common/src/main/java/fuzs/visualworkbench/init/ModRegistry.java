@@ -1,7 +1,7 @@
 package fuzs.visualworkbench.init;
 
-import fuzs.puzzleslib.api.init.v3.registry.RegistryManager;
-import fuzs.puzzleslib.api.init.v3.tags.TagFactory;
+import fuzs.puzzleslib.common.api.init.v3.registry.RegistryManager;
+import fuzs.puzzleslib.common.api.init.v3.tags.TagFactory;
 import fuzs.visualworkbench.VisualWorkbench;
 import fuzs.visualworkbench.world.inventory.VisualCraftingMenu;
 import fuzs.visualworkbench.world.level.block.entity.CraftingTableBlockEntity;

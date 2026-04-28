@@ -1,7 +1,7 @@
 package fuzs.visualworkbench.data.client;
 
-import fuzs.puzzleslib.api.client.data.v2.AbstractLanguageProvider;
-import fuzs.puzzleslib.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.client.data.v2.AbstractLanguageProvider;
+import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
 import fuzs.visualworkbench.init.ModRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Block;

@@ -1,3 +1,5 @@
+import fuzs.multiloader.extension.packageName
+
 plugins {
     id("fuzs.multiloader.multiloader-convention-plugins-fabric")
 }
@@ -5,8 +7,8 @@ plugins {
 dependencies {
     modApi(sharedLibs.fabricapi.fabric)
     modApi(sharedLibs.puzzleslib.fabric)
-    modCompileOnly(sharedLibs.jeiapi.common)
-    modLocalRuntime(sharedLibs.jei.fabric)
+    compileOnly(sharedLibs.jeiapi.common)
+    localRuntime(sharedLibs.jei.fabric)
 }
 
 multiloader {
@@ -14,7 +16,7 @@ multiloader {
         json {
             entrypoint(
                 "jei_mod_plugin",
-                "${project.group}.integration.jei.VisualWorkbenchJEIPlugin"
+                "${project.group}.${project.packageName}.integration.jei.VisualWorkbenchJEIPlugin"
             )
         }
     }

@@ -1,9 +1,10 @@
 {
+    "minecraft": "26.1.2",
     "mod": {
         "id": "visualworkbench",
         "group": "fuzs.visualworkbench",
         "name": "Visual Workbench",
-        "version": "21.11.1",
+        "version": "26.1.0",
         "authors": [
             "Fuzs"
         ],
@@ -36,13 +37,13 @@
     ],
     "links": [
         {
-            "name": "github",
-            "slug": "visualworkbench"
-        },
-        {
             "name": "curseforge",
             "slug": "visual-workbench",
             "id": "500273"
+        },
+        {
+            "name": "github",
+            "slug": "visualwork-bench"
         },
         {
             "name": "modrinth",

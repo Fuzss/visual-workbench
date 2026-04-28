@@ -14,7 +14,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
 import net.minecraft.client.renderer.item.ItemModelResolver;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
-import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
@@ -78,7 +78,7 @@ public class CraftingTableBlockEntityRenderer<T extends BlockEntity & Container 
                 animationController.getNextAngle());
         // light is normally always 0 since it checks inside the crafting table block which is solid, but contents are rendered in the block above
         renderState.itemLightCoords = blockEntity.getLevel() != null ?
-                LevelRenderer.getLightColor(blockEntity.getLevel(), blockEntity.getBlockPos().above()) : 0XF000F0;
+                LevelRenderer.getLightCoords(blockEntity.getLevel(), blockEntity.getBlockPos().above()) : 0XF000F0;
     }
 
     @Override

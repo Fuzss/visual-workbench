@@ -1,7 +1,7 @@
 package fuzs.visualworkbench.config;
 
-import fuzs.puzzleslib.api.config.v3.Config;
-import fuzs.puzzleslib.api.config.v3.ConfigCore;
+import fuzs.puzzleslib.common.api.config.v3.Config;
+import fuzs.puzzleslib.common.api.config.v3.ConfigCore;
 
 public class ClientConfig implements ConfigCore {
     @Config(description = "Makes crafting table contents lay flat on the table instead of floating above.")

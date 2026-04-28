@@ -3,8 +3,7 @@ plugins {
 }
 
 dependencies {
-    modCompileOnly(sharedLibs.puzzleslib.common)
     modApi(sharedLibs.puzzleslib.neoforge)
-    modCompileOnly(sharedLibs.jeiapi.common)
-    modLocalRuntime(sharedLibs.jei.neoforge)
+    compileOnly(sharedLibs.jeiapi.common)
+    localRuntime(sharedLibs.jei.neoforge)
 }

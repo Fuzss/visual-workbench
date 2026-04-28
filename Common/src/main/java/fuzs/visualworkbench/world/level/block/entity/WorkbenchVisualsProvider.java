@@ -1,6 +1,6 @@
 package fuzs.visualworkbench.world.level.block.entity;
 
-import fuzs.puzzleslib.api.core.v1.ModLoaderEnvironment;
+import fuzs.puzzleslib.common.api.core.v1.ModLoaderEnvironment;
 import fuzs.visualworkbench.client.renderer.blockentity.ClientCraftingTableAnimationController;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;

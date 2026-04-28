@@ -1,8 +1,8 @@
 package fuzs.visualworkbench.world.level.block.entity;
 
-import fuzs.puzzleslib.api.block.v1.entity.TickingBlockEntity;
-import fuzs.puzzleslib.api.container.v1.ContainerMenuHelper;
-import fuzs.puzzleslib.api.container.v1.ContainerSerializationHelper;
+import fuzs.puzzleslib.common.api.block.v1.entity.TickingBlockEntity;
+import fuzs.puzzleslib.common.api.container.v1.ContainerMenuHelper;
+import fuzs.puzzleslib.common.api.container.v1.ContainerSerializationHelper;
 import fuzs.visualworkbench.VisualWorkbench;
 import fuzs.visualworkbench.init.ModRegistry;
 import fuzs.visualworkbench.world.inventory.VisualCraftingMenu;
@@ -20,6 +20,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -143,8 +144,8 @@ public class CraftingTableBlockEntity extends RandomizableContainerBlockEntity i
     }
 
     @Override
-    public void clientTick() {
-        this.animationController.tick(this.getLevel());
+    public void clientTick(Level level, BlockPos blockPos, BlockState blockState) {
+        this.animationController.tick(level);
     }
 
     public NonNullList<ItemStack> getResultItems() {
