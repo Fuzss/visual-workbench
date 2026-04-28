@@ -1,4 +1,4 @@
-accessWidener   v2  named
+classTweaker    v2  official
 accessible  field   net/minecraft/world/inventory/AbstractCraftingMenu  craftSlots  Lnet/minecraft/world/inventory/CraftingContainer;
 accessible  field   net/minecraft/world/inventory/AbstractCraftingMenu  resultSlots Lnet/minecraft/world/inventory/ResultContainer;
 accessible  field   net/minecraft/world/inventory/CraftingMenu  access Lnet/minecraft/world/inventory/ContainerLevelAccess;

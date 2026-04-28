@@ -3,10 +3,10 @@ plugins {
 }
 
 dependencies {
-    modApi(libs.fabricapi.fabric)
-    modApi(libs.puzzleslib.fabric)
-    modCompileOnly(libs.jeiapi.common)
-    modLocalRuntime(libs.jei.fabric)
+    modApi(sharedLibs.fabricapi.fabric)
+    modApi(sharedLibs.puzzleslib.fabric)
+    modCompileOnly(sharedLibs.jeiapi.common)
+    modLocalRuntime(sharedLibs.jei.fabric)
 }
 
 multiloader {
