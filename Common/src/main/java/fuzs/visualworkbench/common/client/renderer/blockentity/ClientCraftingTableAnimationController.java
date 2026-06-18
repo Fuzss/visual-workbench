@@ -30,7 +30,7 @@ public final class ClientCraftingTableAnimationController implements CraftingTab
     private float nextAngle;
 
     public ClientCraftingTableAnimationController(BlockPos blockPos) {
-        this.position = blockPos.getCenter();
+        this.position = Vec3.atCenterOf(blockPos);
     }
 
     @Override
@@ -84,7 +84,7 @@ public final class ClientCraftingTableAnimationController implements CraftingTab
                         } else {
                             Minecraft minecraft = Minecraft.getInstance();
                             if (entity == minecraft.player) {
-                                return minecraft.screen instanceof CraftingScreen;
+                                return minecraft.gui.screen() instanceof CraftingScreen;
                             } else {
                                 return false;
                             }

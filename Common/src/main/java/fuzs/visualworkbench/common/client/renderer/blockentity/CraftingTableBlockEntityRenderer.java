@@ -7,7 +7,6 @@ import fuzs.visualworkbench.common.client.renderer.blockentity.state.CraftingTab
 import fuzs.visualworkbench.common.config.ClientConfig;
 import fuzs.visualworkbench.common.world.level.block.entity.CraftingTableAnimationController;
 import fuzs.visualworkbench.common.world.level.block.entity.WorkbenchVisualsProvider;
-import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -16,6 +15,7 @@ import net.minecraft.client.renderer.item.ItemModelResolver;
 import net.minecraft.client.renderer.item.ItemStackRenderState;
 import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.util.LightCoordsUtil;
 import net.minecraft.util.Mth;
 import net.minecraft.world.Container;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -78,7 +78,7 @@ public class CraftingTableBlockEntityRenderer<T extends BlockEntity & Container 
                 animationController.getNextAngle());
         // light is normally always 0 since it checks inside the crafting table block which is solid, but contents are rendered in the block above
         renderState.itemLightCoords = blockEntity.getLevel() != null ?
-                LevelRenderer.getLightCoords(blockEntity.getLevel(), blockEntity.getBlockPos().above()) : 0XF000F0;
+                LightCoordsUtil.getLightCoords(blockEntity.getLevel(), blockEntity.getBlockPos().above()) : 0XF000F0;
     }
 
     @Override

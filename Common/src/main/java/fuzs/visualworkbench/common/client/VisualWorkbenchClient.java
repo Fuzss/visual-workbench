@@ -4,7 +4,9 @@ import fuzs.puzzleslib.common.api.client.core.v1.ClientModConstructor;
 import fuzs.puzzleslib.common.api.client.core.v1.context.BlockEntityRenderersContext;
 import fuzs.puzzleslib.common.api.client.core.v1.context.BlockStateResolverContext;
 import fuzs.puzzleslib.common.api.client.core.v1.context.MenuScreensContext;
+import fuzs.puzzleslib.common.api.client.event.v1.ClientTagsUpdatedCallback;
 import fuzs.puzzleslib.common.api.client.renderer.v1.model.ModelLoadingHelper;
+import fuzs.puzzleslib.common.api.event.v1.core.EventPhase;
 import fuzs.visualworkbench.common.VisualWorkbench;
 import fuzs.visualworkbench.common.client.handler.BlockStateTranslator;
 import fuzs.visualworkbench.common.client.renderer.blockentity.CraftingTableBlockEntityRenderer;
@@ -22,6 +24,17 @@ import java.util.concurrent.Executor;
 import java.util.function.BiConsumer;
 
 public class VisualWorkbenchClient implements ClientModConstructor {
+
+    @Override
+    public void onConstructMod() {
+        registerEventHandlers();
+    }
+
+    private static void registerEventHandlers() {
+        ClientTagsUpdatedCallback.EVENT.register(EventPhase.FIRST,
+                BlockConversionHandler.onClientTagsUpdated(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG,
+                        VisualWorkbench.BLOCK_PREDICATE)::accept);
+    }
 
     @Override
     public void onRegisterBlockStateResolver(BlockStateResolverContext context) {

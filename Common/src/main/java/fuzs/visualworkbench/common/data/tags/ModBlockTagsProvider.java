@@ -5,8 +5,8 @@ import fuzs.puzzleslib.common.api.data.v2.tags.AbstractTagProvider;
 import fuzs.visualworkbench.common.init.ModRegistry;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.references.BlockItemIds;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 
 public class ModBlockTagsProvider extends AbstractTagProvider<Block> {
 
@@ -16,6 +16,7 @@ public class ModBlockTagsProvider extends AbstractTagProvider<Block> {
 
     @Override
     public void addTags(HolderLookup.Provider provider) {
-        this.tag(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG).add(Blocks.SMITHING_TABLE, Blocks.FLETCHING_TABLE);
+        this.tag(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG)
+                .add(BlockItemIds.SMITHING_TABLE.block(), BlockItemIds.FLETCHING_TABLE.block());
     }
 }

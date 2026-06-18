@@ -6,7 +6,7 @@ import fuzs.puzzleslib.common.api.event.v1.AddBlockEntityTypeBlocksCallback;
 import fuzs.puzzleslib.common.api.event.v1.RegistryEntryAddedCallback;
 import fuzs.puzzleslib.common.api.event.v1.core.EventPhase;
 import fuzs.puzzleslib.common.api.event.v1.entity.player.PlayerInteractEvents;
-import fuzs.puzzleslib.common.api.event.v1.server.TagsUpdatedCallback;
+import fuzs.puzzleslib.common.api.event.v1.server.ServerResourcesLoadCallback;
 import fuzs.visualworkbench.common.config.ClientConfig;
 import fuzs.visualworkbench.common.config.ServerConfig;
 import fuzs.visualworkbench.common.handler.BlockConversionHandler;
@@ -48,8 +48,9 @@ public class VisualWorkbench implements ModConstructor {
         PlayerInteractEvents.USE_BLOCK.register(BlockConversionHandler.onUseBlock(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG,
                 null,
                 () -> CONFIG.get(ServerConfig.class).convertVanillaWorkbenchWhenInteracting));
-        TagsUpdatedCallback.EVENT.register(EventPhase.FIRST,
-                BlockConversionHandler.onTagsUpdated(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG, BLOCK_PREDICATE));
+        ServerResourcesLoadCallback.EVENT.register(EventPhase.FIRST,
+                BlockConversionHandler.onServerResourcesLoad(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG,
+                        BLOCK_PREDICATE)::accept);
     }
 
     public static Identifier id(String path) {
