@@ -8,17 +8,17 @@ plugins {
 dependencies {
     modApi(sharedLibs.fabricapi.fabric)
     modApi(sharedLibs.puzzleslib.fabric)
-//    compileOnly(sharedLibs.jeiapi.common)
-//    localRuntime(sharedLibs.jei.fabric)
+    compileOnly(sharedLibs.jeiapi.common)
+    localRuntime(sharedLibs.jei.fabric)
 }
 
-//multiloader {
-//    modFile {
-//        json {
-//            entrypoint(
-//                "jei_mod_plugin",
-//                "${project.group}.${project.commonProject.packageName}.integration.jei.VisualWorkbenchJEIPlugin"
-//            )
-//        }
-//    }
-//}
+multiloader {
+    modFile {
+        json {
+            entrypoint(
+                "jei_mod_plugin",
+                "${project.group}.${project.commonProject.packageName}.integration.jei.VisualWorkbenchJEIPlugin"
+            )
+        }
+    }
+}
