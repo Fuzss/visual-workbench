@@ -1,9 +1,16 @@
 {
   "branches": {
-    "1.21.11": "archived",
-    "1.21.1": "maintained",
     "1.20.1": "fixes",
+    "1.21.1": "maintained",
+    "1.21.11": "archived",
     "26.1.x": "maintained",
     "26.2.x": "primary"
+  },
+  "properties": {
+    "distributions.curseforge.id": "500273",
+    "distributions.curseforge.slug": "visual-workbench",
+    "distributions.github.slug": "visual-workbench",
+    "distributions.modrinth.id": "kfqD1JRw",
+    "distributions.modrinth.slug": "visual-workbench"
   }
 }
