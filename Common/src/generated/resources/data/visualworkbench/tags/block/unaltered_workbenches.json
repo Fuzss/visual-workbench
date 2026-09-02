@@ -1,6 +1,14 @@
 {
   "values": [
+    {
+      "id": "furniture:blueprints",
+      "required": false
+    },
+    "minecraft:fletching_table",
     "minecraft:smithing_table",
-    "minecraft:fletching_table"
+    {
+      "id": "furniture:tool_box",
+      "required": false
+    }
   ]
 }
