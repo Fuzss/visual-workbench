@@ -32,7 +32,7 @@
       "${modGroup}.integration.jei.VisualWorkbenchJEIPlugin"
     ],
     "emi": [
-      "${modGroup}.integration.emi.VisualWorkbenchEmiPlugin"
+      "${modGroup}.integration.emi.VisualWorkbenchEMIPlugin"
     ]
   },
 

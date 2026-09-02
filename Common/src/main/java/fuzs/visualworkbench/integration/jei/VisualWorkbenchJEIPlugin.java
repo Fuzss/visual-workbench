@@ -11,7 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 
 @JeiPlugin
 public class VisualWorkbenchJEIPlugin implements IModPlugin {
-
     @Override
     public ResourceLocation getPluginUid() {
         return VisualWorkbench.id("crafting");
@@ -19,6 +18,12 @@ public class VisualWorkbenchJEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
-        registration.addRecipeTransferHandler(VisualCraftingMenu.class, ModRegistry.CRAFTING_MENU_TYPE.value(), RecipeTypes.CRAFTING, 1, 9, 10, 36);
+        registration.addRecipeTransferHandler(VisualCraftingMenu.class,
+                ModRegistry.CRAFTING_MENU_TYPE.value(),
+                RecipeTypes.CRAFTING,
+                1,
+                9,
+                10,
+                36);
     }
 }
