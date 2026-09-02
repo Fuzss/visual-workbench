@@ -10,4 +10,8 @@ dependencies {
     // Just Enough Items
     compileOnly libs.jeiapi.common
     modLocalRuntime libs.jei.fabric
+
+    // EMI
+    compileOnly libs.emi.common
+    modLocalRuntime libs.emi.fabric
 }
