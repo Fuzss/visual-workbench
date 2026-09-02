@@ -1,4 +1,4 @@
-package fuzs.visualworkbench.data;
+package fuzs.visualworkbench.data.tags;
 
 import fuzs.puzzleslib.api.data.v2.core.DataProviderContext;
 import fuzs.puzzleslib.api.data.v2.tags.AbstractTagProvider;
@@ -16,6 +16,8 @@ public class ModBlockTagsProvider extends AbstractTagProvider<Block> {
 
     @Override
     public void addTags(HolderLookup.Provider provider) {
-        this.add(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG).add(Blocks.SMITHING_TABLE, Blocks.FLETCHING_TABLE);
+        this.tag(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG)
+                .add(Blocks.SMITHING_TABLE, Blocks.FLETCHING_TABLE)
+                .addOptional("furniture:blueprints", "furniture:tool_box");
     }
 }
