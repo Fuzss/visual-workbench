@@ -6,6 +6,7 @@
   "mixins": [
   ],
   "client": [
+    "client.BlockStateModelLoaderNeoForgeMixin"
   ],
   "injectors": {
     "defaultRequire": 1

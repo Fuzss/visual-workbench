@@ -39,6 +39,7 @@ import java.util.function.*;
 
 public class BlockConversionHandler {
     private static final BiMap<Block, Block> BLOCK_CONVERSIONS = HashBiMap.create();
+    private static final BiMap<Block, Block> BLOCK_CONVERSIONS_VIEW = Maps.unmodifiableBiMap(BLOCK_CONVERSIONS);
     private static final Map<BlockState, BlockState> BLOCK_STATE_CONVERSIONS_CACHE = new MapMaker().weakKeys()
             .weakValues()
             .makeMap();
@@ -58,7 +59,7 @@ public class BlockConversionHandler {
     }
 
     public static BiMap<Block, Block> getBlockConversions() {
-        return Maps.unmodifiableBiMap(BLOCK_CONVERSIONS);
+        return BLOCK_CONVERSIONS_VIEW;
     }
 
     public static AddBlockEntityTypeBlocksCallback onAddBlockEntityTypeBlocks(Holder.Reference<? extends BlockEntityType<?>> blockEntityType) {
