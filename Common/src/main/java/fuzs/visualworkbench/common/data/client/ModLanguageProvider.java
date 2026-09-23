@@ -1,7 +1,7 @@
 package fuzs.visualworkbench.common.data.client;
 
-import fuzs.puzzleslib.common.api.client.data.v2.AbstractLanguageProvider;
-import fuzs.puzzleslib.common.api.data.v2.core.DataProviderContext;
+import fuzs.puzzleslib.common.api.client.data.v3.language.AbstractLanguageProvider;
+import fuzs.puzzleslib.common.api.data.v3.core.DataProviderContext;
 import fuzs.visualworkbench.common.init.ModRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Block;
@@ -13,8 +13,8 @@ public class ModLanguageProvider extends AbstractLanguageProvider {
     }
 
     @Override
-    public void addTranslations(TranslationBuilder builder) {
-        builder.add(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG, "Unaltered Workbenches");
+    public void addTranslations() {
+        this.add(ModRegistry.UNALTERED_WORKBENCHES_BLOCK_TAG, "Unaltered Workbenches");
     }
 
     @Override

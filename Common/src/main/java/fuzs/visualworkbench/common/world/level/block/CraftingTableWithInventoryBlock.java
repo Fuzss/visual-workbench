@@ -1,6 +1,5 @@
 package fuzs.visualworkbench.common.world.level.block;
 
-import com.mojang.serialization.MapCodec;
 import fuzs.puzzleslib.common.api.block.v1.entity.TickingEntityBlock;
 import fuzs.visualworkbench.common.init.ModRegistry;
 import fuzs.visualworkbench.common.world.level.block.entity.CraftingTableBlockEntity;
@@ -22,15 +21,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import java.util.function.Predicate;
 
 public class CraftingTableWithInventoryBlock extends BaseEntityBlock implements TickingEntityBlock<CraftingTableBlockEntity> {
-    public static final MapCodec<CraftingTableWithInventoryBlock> CODEC = simpleCodec(CraftingTableWithInventoryBlock::new);
 
     public CraftingTableWithInventoryBlock(Properties properties) {
         super(properties);
-    }
-
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
     }
 
     @Override

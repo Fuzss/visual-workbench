@@ -98,12 +98,12 @@ public class CraftingTableBlockEntityRenderer<T extends BlockEntity & Container 
         if (!itemStackRenderState.isEmpty()) {
             poseStack.pushPose();
             poseStack.translate(0.5, 0.0, 0.5);
-            poseStack.mulPose(Axis.YP.rotationDegrees(renderState.angle));
+            poseStack.rotateDegrees(Axis.YP, renderState.angle);
             poseStack.translate((double) (index % 3) * 3.0 / 16.0 + 0.3125 - 0.5,
                     isGui3d(itemStackRenderState) ? 1.0625 : 1.005,
                     (double) (index / 3) * 3.0 / 16.0 + 0.3125 - 0.5);
-            poseStack.mulPose(Axis.XP.rotationDegrees(90.0F));
-            poseStack.mulPose(Axis.ZP.rotationDegrees(180.0F));
+            poseStack.rotateDegrees(Axis.XP, 90.0F);
+            poseStack.rotateDegrees(Axis.ZP, 180.0F);
             float scale = isGui3d(itemStackRenderState) ? 0.25F : 0.175F;
             poseStack.scale(scale, scale, scale);
             itemStackRenderState.submit(poseStack,
@@ -122,7 +122,7 @@ public class CraftingTableBlockEntityRenderer<T extends BlockEntity & Container 
             // -0.0125 to 0.0125
             float shift = (float) Math.abs((renderState.time * 50.0 + (index * 1000L)) % 5000L - 2500L) / 200000.0F;
             poseStack.translate(0.5, shift, 0.5);
-            poseStack.mulPose(Axis.YP.rotationDegrees(renderState.angle));
+            poseStack.rotateDegrees(Axis.YP, renderState.angle);
             poseStack.translate((double) (index % 3) * 3.0 / 16.0 + 0.3125 - 0.5,
                     1.09375,
                     (double) (index / 3) * 3.0 / 16.0 + 0.3125 - 0.5);
@@ -146,7 +146,7 @@ public class CraftingTableBlockEntityRenderer<T extends BlockEntity & Container 
             AABB aABB = itemStackRenderState.getModelBoundingBox();
             float modelYScale = -((float) aABB.minY) + 0.0625F;
             poseStack.translate(0.0, hoverOffset + modelYScale, 0.0);
-            poseStack.mulPose(Axis.YP.rotation(renderState.time / 20.0F));
+            poseStack.rotate(Axis.YP, renderState.time / 20.0F);
             if (!isGui3d(itemStackRenderState)) {
                 poseStack.scale(0.75F, 0.75F, 0.75F);
             }
